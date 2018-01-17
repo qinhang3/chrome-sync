@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+
+  "name": "Chrome Tips Syncer",
+  "description": "在 chrome 之间复制粘贴",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "sync.html",
+    "default_title": "Click here!"
+  },
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ]
+}

@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Chrome Tips Syncer</title>
+        <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <script src="ext/jquery.min.js"></script>
+        <script src="ext/bootstrap.min.js"></script>
+        <script src="ext/vue.js"></script>
+        <script src="sync.js"></script>
+    </head>
+    <body style="width: 700px">
+        <div class="page-header">
+            <h1>Chrome Tips Syncer<small>在 chrome 之间复制粘贴</small></h1>
+        </div>
+        <div id="listGroup">
+            <ul class="list-group" v-for="data in datas">
+                <li class="list-group-item">{{data}}</li>
+            </ul>
+        </div>
+    </body>
+</html>
