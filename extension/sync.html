@@ -15,8 +15,10 @@
             <h1>Chrome Tips Syncer<small>在 chrome 之间复制粘贴</small></h1>
         </div>
         <div id="listGroup">
-            <ul class="list-group" v-for="data in datas">
-                <li class="list-group-item">{{data}}</li>
+            <textarea class="form-control" rows="3" v-model="req.value"></textarea>
+            <button type="button" class="btn btn-default" v-on:click="save">Save</button>
+            <ul class="list-group" v-for="item in resp.data">
+                <li class="list-group-item">{{item.value}}</li>
             </ul>
         </div>
     </body>
