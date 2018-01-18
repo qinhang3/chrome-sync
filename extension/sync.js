@@ -16,19 +16,33 @@ jQuery(document).ready(
                 }
             },
             methods: {
-                save : function(){
-                    jQuery.post(syncHost + "/sync/add",{
-                        value : vueBody.req.value
-                    }, function (data) {
-                        vueBody.resp = data;
-                    });
+                ctrlc : function(){
+                    vueBody.req.value = '';
+                    this.$nextTick(function () {
+                        jQuery('#valueInput').focus();
+                        document.execCommand('paste');
+                        this.$nextTick(function () {
+                            jQuery.post(syncHost + "/sync/add", {
+                                value: vueBody.req.value
+                            }, function (data) {
+                                vueBody.resp = data;
+                            });
+                        });
+                    })
                 },
                 format : function (time) {
                     return timeFormatter(time, "{YYYY}-{MM}-{DD} {HH}:{mm}:{ss}");
+                },
+                ctrlv : function (str) {
+                    vueBody.req.value = str;
+                    this.$nextTick(function () {
+                        jQuery('#valueInput').select();
+                        console.log(jQuery('#valueInput').val());
+                        console.log("write clipboard : " + document.execCommand('copy'));
+                    });
                 }
             }
         });
-
         setInterval(load, 1000);
         load();
     }

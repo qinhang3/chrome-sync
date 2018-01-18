@@ -17,14 +17,14 @@
         <div class="row" id="listGroup">
             <div class="col-md-1"></div>
             <div class="col-md-10">
-                <textarea class="form-control" rows="3" v-model="req.value"></textarea>
-                <button type="button" class="btn btn-primary" v-on:click="save" style="width: 100%; margin-top: 10px">Save</button>
+                <textarea class="form-control" rows="3" v-model="req.value" id="valueInput"></textarea>
+                <button type="button" class="btn btn-primary" v-on:click="ctrlc" style="width: 100%; margin-top: 10px">Ctrl+C</button>
 
                 <ul class="list-group" v-for="item in resp.data" style="margin-top: 10px">
-                    <li class="list-group-item">
+                    <button type="button" class="list-group-item" v-on:click="ctrlv(item.value)">
                         <span class="badge">{{format(item.createTime)}}</span>
                         {{item.value}}
-                    </li>
+                    </button>
                 </ul></div>
             <div class="col-md-1"></div>
         </div>
