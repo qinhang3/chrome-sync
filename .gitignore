@@ -1,2 +1,5 @@
 *.iml
 .idea/
+dist/
+chrome-app/node_modules/
+*.pem
