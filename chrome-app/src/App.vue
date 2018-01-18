@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-md-1"></div>
     <div class="col-md-10">
-      <textarea class="form-control" rows="3" v-model="req.value" id="valueInput"></textarea>
+      <textarea class="form-control" rows="1" v-model="req.value" id="valueInput" placeholder="输入输出缓冲区。不用改。改了也没用"></textarea>
       <button type="button" class="btn btn-primary" v-on:click="ctrlc" style="width: 100%; margin-top: 10px">Ctrl+C</button>
       <div  class="list-group">
         <button type="button" class="list-group-item" v-on:click="ctrlv(item.value)" v-for="item in resp.data">
@@ -31,7 +31,7 @@
       }
     },
     created : function () {
-      console.log("created running...")
+      console.log("created running...");
       this.load();
       setInterval(this.load, 1000)
     },

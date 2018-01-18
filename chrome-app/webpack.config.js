@@ -16,7 +16,7 @@ fs.copyFile('./src/assets/ext/bootstrap.min.css', './dist/assets/ext/bootstrap.m
 fs.copyFile('./src/assets/ext/jquery.min.js', './dist/assets/ext/jquery.min.js', (err) => {
   if (err) throw err;
 });
-fs.copyFile('./src/manifest.json', './dist/manifest.json', (err) => {
+fs.copyFile('./src/manifest-app.json', './dist/manifest.json', (err) => {
   if (err) throw err;
 });
 fs.copyFile('./src/background.js', './dist/background.js', (err) => {
